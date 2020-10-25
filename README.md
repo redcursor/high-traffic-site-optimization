@@ -37,3 +37,58 @@ SVGs are used to better demonstration.
 <p align="center">
     <img src="svg/effective-bottom-up.svg" />
 </p>
+
+<hr>
+
+### Infrastructure
+Check / test your infrastructure  
+
+#### dmidecode
+dmidecode - DMI table decoder  
+dmidecode  is a tool for dumping a computer's DMI (some say SMBIOS) table contents in a human-readable format. 
+
+Usage
+`dmidecode --type | -t`  
+options
+```
+bios
+system
+baseboard
+chassis
+processor
+#memory
+cache
+connector
+slot
+```
+There of the are more useful  
+```
+sudo dmidecode --type system
+sudo dmidecode --type processor
+sudo dmidecode --type memory
+```
+
+
+Test on a dedicated #server (`sudo dmidecode --type system`)
+```
+System Information
+Manufacturer: HP
+Product Name: ProLiant DL360 G7
+Version: Not Specified
+Serial Number: ...
+...
+Family: ProLiant
+```
+
+Test on a Virtual Server in Hetzner (`sudo dmidecode --type system`)
+```
+System Information
+Manufacturer: Hetzner
+Product Name: vServer
+Version: ...
+Serial Number: ...
+...
+Family: Hetzner_vServer
+```
+
+#### lshw
