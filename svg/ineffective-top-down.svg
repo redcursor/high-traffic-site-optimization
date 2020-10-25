@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" xmlns:xlink="http://www.w3.org/1999/xlink" width="500" height="650" font-family="Montserrat">
+  <rect x="0" y="0" width="500" height="650" fill="#454545"></rect>
+  <g transform="translate(10,640)" opacity="0.5"  font-family="Ubuntu" text-anchor="middle" fill="#fc0"  font-weight="bold" font-size="100">
+    <text x="360" y="10" transform = "rotate(-45,0,0)" >ineffective</text>
+  </g>
+  <g transform="translate(0,70)"  font-family="Ubuntu" text-anchor="middle" fill="#fff"  font-weight="bold" font-size="28" style="text-shadow: 2px 2px 4px #f00;">
+    <text x="250" y="0" >High  Traffic Site Optimization</text>
+    <line x1="50" x2="450" y1="20" y2="20" fill="#fff" stroke="#FFF" stroke-width="3" ></line>
+    <text x="250" y="50" font-size="18" style="text-shadow: 0 0" >ineffective approach (Top-Down)</text>
+  </g>
+  
+  <g transform="translate(0,180)" font-family="ubuntu" font-weight="bold" text-anchor="middle" font-size="20">
+    <text x="50" y="-10" font-size="18" fill="#FF0" text-anchor="start">Software e.g. php, nodejs, python, etc</text>
+    <rect x="50" y="0" width="400" height="50" rx="5"  fill="#f0f0f0"></rect>
+    <text x="250" y="35" font-size="18">Code Level</text>
+  </g>
+    
+  <g transform="translate(0,300)" font-family="ubuntu" font-weight="bold" text-anchor="middle" font-size="20">
+    <text x="50" y="-10" font-size="18" fill="#FF0" text-anchor="start">Software e.g. Nginx, Apache, etc</text>
+    <rect x="50" y="0" width="400" height="50" rx="5"  fill="#f0f0f0"></rect>
+    <text x="250" y="35" font-size="18">Service Level</text>
+    <path fill="none" stroke="#000" stroke-width="3" d="M430,-90 v80 q0" marker-start="url(#diamond)" marker-end="url(#arrowhead)"></path>
+  </g>
+
+    <g transform="translate(0,420)" font-family="ubuntu" font-weight="bold" text-anchor="middle" font-size="20">
+    <text x="50" y="-10" font-size="18" fill="#FF0" text-anchor="start">Software / Hardware e.g LB, HA, SPoF, etc</text>
+    <rect x="50" y="0" width="400" height="50" rx="5"  fill="#f0f0f0"></rect>
+    <text x="250" y="35" font-size="18">Architecture Level</text>
+    <path fill="none" stroke="#000" stroke-width="3" d="M430,-90 v80 q0" marker-start="url(#diamond)" marker-end="url(#arrowhead)"></path>
+  </g>
+<g transform="translate(0,540)" font-family="ubuntu" font-weight="bold" text-anchor="middle" font-size="20">
+    <text x="50" y="-10" font-size="18" fill="#FF0" text-anchor="start">Hardware e.e. Port speed, FS format, etc</text>
+    <rect x="50" y="0" width="400" height="50" rx="5"  fill="#f0f0f0"></rect>
+    <text x="250" y="35" font-size="18">Infrastructure Level</text>
+    <path fill="none" stroke="#000" stroke-width="3" d="M430,-90 v80 q0" marker-start="url(#diamond)" marker-end="url(#arrowhead)"></path>
+  </g>
+  
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+            refX="0" refY="3.5" orient="auto">
+      <polygon fill="#000" points="0 0, 5 3.5, 0 7" />
+    </marker>
+    <marker id="diamond" markerWidth="12" markerHeight="12" refX="6" refY="6" >
+      <circle fill="#000" cx="6" cy="6" r="2" stroke="context-stroke" stroke-width="2"/>
+    </marker>
+  </defs>
+        <defs>
+        <style type="text/css"><![CDATA[
+          @-webkit-keyframes stroke_forward {
+            100% { stroke-dashoffset: -140;  } }
+          @keyframes stroke_forward {
+            100% { stroke-dashoffset: -140; }
+          }
+          path#move_stroke {
+            animation-name: stroke_forward;
+            animation-duration: 5s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+          }
+      ]]></style>
+      </defs>
+
+  <g transform="translate(10,640)"  font-family="Ubuntu" text-anchor="start" fill="#fff"  font-weight="bold" font-size="20">
+    <text x="0" y="0" ><tspan fill="#fa0000">Red</tspan> Cursor</text>
+  </g>
+<!--<path fill="none" stroke="#000" stroke-width="3" d="M60,50 v140 q0" marker-start="url(#diamond)" marker-end="url(#arrowhead)"></path>-->
+</svg>
