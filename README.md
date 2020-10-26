@@ -56,7 +56,7 @@ system
 baseboard
 chassis
 processor
-#memory
+memory
 cache
 connector
 slot
@@ -92,3 +92,91 @@ Family: Hetzner_vServer
 ```
 
 #### lshw
+lshw - list hardware
+
+First see all available options, sample output:
+```
+>>> sudo lshw |& grep '\*-[a-z]\+'
+  *-core
+     *-cache:0
+     *-cache:1
+     *-cache:2
+     *-cache:3
+     *-cpu
+     *-memory
+        *-bank:0
+        *-bank:1
+        *-bank:2
+        *-bank:3
+     *-firmware
+     *-pci
+        *-display
+        *-usb
+           *-usbhost:0
+              *-usb:0
+              *-usb:1
+           *-usbhost:1
+        *-generic
+        *-communication:0
+        *-communication:1
+        *-storage
+        *-isa
+        *-memory UNCLAIMED
+        *-multimedia
+        *-serial UNCLAIMED
+        *-network
+     *-scsi:0
+        *-disk
+           *-volume:0
+           *-volume:1
+           *-volume:2
+              *-logicalvolume
+           *-volume:3
+     *-scsi:1
+        *-cdrom
+  *-power UNCLAIMED
+```
+
+Four useful ones are `cpu, memory, disk, network` which we can see using `-class` arguments
+```
+sudo lshw -class cpu
+sudo lshw -class memory
+sudo lshw -class network
+sudo lshw -class disk
+```
+
+here we are more interested in `network` and `disk`, first for network find how many interfaced we have:
+```
+>>> ip -br a
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp3s0f0         UP             <ip4>/24 <ip6>/64 
+enp3s0f1         DOWN           
+enp4s0f0         DOWN           
+enp4s0f1         DOWN 
+```
+then check that one which is up.
+```
+>>> lshw -sanitize -class network
+  *-network:0               
+       description: Ethernet interface
+       product: NetXtreme II BCM5709 Gigabit Ethernet
+       vendor: Broadcom Inc. and subsidiaries
+       physical id: 0
+       bus info: pci@0000:03:00.0
+       logical name: enp3s0f0     # the interface name which is UP
+       version: 20
+       serial: [REMOVED]
+       size: 1Gbit/s              # this is what we looked for
+       capacity: 1Gbit/s          # this is what we looked for
+       width: 64 bits
+       clock: 33MHz
+       ...
+       ...
+  *-network:1
+       description: Ethernet interface
+       product: NetXtreme II BCM5709 Gigabit Ethernet
+       vendor: Broadcom Inc. and subsidiaries
+       ...
+       ...
+```
+here `-sanitize` is for removing sensitive information like serial numbers, etc.
